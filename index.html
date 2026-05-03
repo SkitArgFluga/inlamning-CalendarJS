@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/m.css">
     <link rel="stylesheet" href="css/xl.css">
     <link rel="stylesheet" href="css/xs.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!--Inga script-taggar här-->
 </head>
 
@@ -16,11 +15,10 @@
     <!--Header: tid, veckodag och datum-->
     <header>
 
-        <div class="header-brand>"
-            <span class="logo-icon"></span>
-        
-        <h1><i class="fa-solid fa-calendar"></i> Calendar Todo App</h1>
-
+        <div class="header-brand">
+            <span class="logo-icon">📅</span>
+            <h1>TodoKal</h1>
+        </div>
         <!--today.js skriver in tid, dag och datum här-->
         <div id="today-info">
             <span id="current-time">00:00:00</span>
@@ -28,21 +26,49 @@
             <span id="current-date">1 januari 2026</span>
         </div>
         
+    </header>
+    <!--Main: todo-lista(vänster), kalender(höger)-->
+    <main>
+        <!--lista-->
+        <section class="todo-section">
+        <h2>Mina Todos</h2>
+
+        <!--skriv todo och välj datum-->
+        <div class="add-todo-form">
+        <input type="text" id="todo-input"
+        placeholder="Vad ska du göra?">
+        <input type="date" id="todo-date"/>
+        <button id="add-todo-btn">Lägg till</button>
+        </div>
+        <!--Todos Listan-->
+        <ul id="todo-list"></ul>
+        </section>
+
+        <!--Kalender-->
+        <section class="calendar-section">
+            <!--Navigeringsknappar för att byta månad-->
+            <div class="calendar-header">
+                <button id="prev-month">←</button>
+                <h2 id="calendar-title">Maj 2026</h2>
+                <button id="next-month">→</button>
+            </div>
+        <!--veckodag-->
+        <div class="calendar-weekdays">
+            <span>Mån</span> <span>Tis</span> <span>Ons</span> <span>Tor</span>
+            <span>Fre</span> <span>Lör</span> <span>Sön</span>
         </div>
 
-    </header>
+        <!--Dagarna fylls i av calendar.js-->
+        <div id="calendar-grid"></div>
 
+        </section>
 
-
-
-
-
-
-
-
-    <!--All HTML kommer här-->
-
-
+    </main>
+        <!--JS.filer-->
+        <script src="js/today.js"></script>
+        <script src="js/todos.js"></script>
+        <script src="js/calendar.js"></script>
+        <script src="js/main.js"></script>
     
 </body>
 </html>
