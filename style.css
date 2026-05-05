@@ -1,0 +1,134 @@
+/* BASE / PHONE SIZE */
+:root{
+    --bg: #0f1117;
+    --surface: #1a1d27
+    --surface2: #242736
+    --border: #2e3245;
+    --accent: #6c8eff;
+    --accent2: #ff6b9d;
+    --text: #e8eaf6;
+    --text-muted: #8b90b0;
+    --success: #4caf88;
+    --warning: #ffb347;
+    --danger: #ff5252;
+    --radius: 12px;
+    --shadow: 0 4px  24px  rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0;
+}
+
+header{
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem
+    ;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.item {
+  border-radius: 0.5em;
+  padding: 20px;
+  width: 10rem;
+}
+
+.container {
+  font: 1.2em sans-serif;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1{
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+main{
+    display: flex;
+    flex: 1;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    align-items: flex-start;
+}
+
+
+.page{
+  width:95%; 
+  max-width:75vw; 
+  margin:0 auto; 
+  box-sizing:border-box;
+}
+
+.material-symbols-outlined{ font-size:16px; vertical-align:middle; }
+
+/* KOPIERADE FRÅN ANNAT PROJEKT // SOFIA */
+.row {
+  margin: 8px -16px;
+}
+
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+.column {
+  display: flex;
+  float: left;
+  width: 20%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  border-radius: 5px;
+  background-color: rgb(54, 54, 54);
+  overflow: hidden;
+}
+
+.content .title{
+  color: white;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .description{
+  color: yellow;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .genre{
+  color:darkgray;
+  font-size: small;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .price-tag{
+  color: #d6d6d6;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
