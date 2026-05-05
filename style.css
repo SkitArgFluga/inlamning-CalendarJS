@@ -132,3 +132,154 @@ main{
   padding-left: 15px;
   padding-right: 15px;
 }
+
+/*==========================================================================================
+                            Schema panel
+============================================================================================*/
+
+.schema-panel{
+  background-color: #c8d8e8;
+  border-right: 2px soöid #a0b8cc;
+  padding: 12px;
+  width: 280px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/*Rubrik*/
+schema-header{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #5a7a9a;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.schema-title{
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin: 0%;
+}
+/*Formuläret*/
+.schema-form{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.schema-select, 
+.schema-input,
+.schema-time{
+  width: 100;
+  padding: 6px 10px;
+  border: 1px solid #a0b8cc;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 0.85rem;
+  outline: none;
+}
+.schema-select:focus, 
+.schema-input:focus{
+  border-color: #5a7a9a;
+}
+:-moz-any/*Tid från-till*/
+.schema-tid{
+  display: block;
+  align-items: center;
+  gap:  6px;
+}
+.schema-tid .schema-time{
+  flex-direction: 1;
+}
+.tid-sep{
+  font-size: 0.8rem;
+  color: #555;
+  white-space: nowrap;
+}
+
+/*Lägg till-knapp*/
+.btn-schema{
+  padding: 8px;
+  background-color: #5a7a9a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+   transition: background 0.2s;
+}
+.btn-schema:hover{
+  background-color: #3a5a7a;
+}
+.schema-lista{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: block;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/*En rad i listan*/
+.schema-item{
+  background-color: white;
+  border-left: 4px solid #5a7a9a;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.82rem;
+}
+.schema-item-dag{
+  font-weight: 700;
+  color: #3a5a7a;
+  text-transform: capitalize;
+  margin-bottom: 2px;
+}
+.schema-item-text{
+  color: #333;
+}
+.schema-item-tid{
+  color: #666;
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+/*Helgdag och evenemang-knappar*/
+.btn-helgdag,
+.btn-evenemang{
+  display: block;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600
+  ;
+  cursor: alias;
+  width: 100%;
+  transform: background 0.2s;
+}
+.btn-helgdag{
+  background: #d4a853;
+  color: white;
+}
+.btn-helgdag:hover{
+  background-color: #b8882e;
+}
+.btn-evenemang{
+    background-color: #5a9a7a;
+    color: white;
+}
+.btn-evenemang:hover{
+  background-color: #3a7a5a;
+}
+.btn-plus{
+  margin-left: auto;
+  font-size: 1.2rem;
+  font-weight: 300;
+}

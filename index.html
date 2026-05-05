@@ -15,6 +15,78 @@
         </div>
     </header>
 
+<!--==========================================================================================
+                     SCHEMA-PANEL 
+===============================================================================================-->
+    <aside class="schema-header">
+
+    <!---Rubrik-->
+    <div class="schema-header">
+    <span class="schema-icon">📋</span>
+    <h2 class="schema-title">Schema för arbete/skola</h2>
+    </div>
+
+    <!--Välj dag + lägg till-->
+
+    <div class="schema-form">
+
+    <!--Dropdown- välj veckodag
+    id= schema-dag--->
+
+    <select name="schema-dag---" class="schema-select">
+    <option value="">Välj dag...</option>
+    <option value="Måndag">Måndag</option>
+    <option value="tisdag">Tisdag</option>
+    <option value="onsdag">Onsdag</option>
+    <option value="torsdag">Torsdag</option>
+    <option value="fredag">Fredag</option>
+    <option value="lördag">Lördag</option>
+    <option value="söndag">Söndag</option>
+    </select>
+
+    <!--Textfält-skriv in vad som händer-->
+    <input type="text" 
+    id="schema-dag" 
+    class="schema-input" 
+    placeholder="Vad händer? (r.ex. Jobbar)"
+    maxlength="50"
+    />
+    <!--Tid från och till-->
+    <div class="schema-tid">
+        <input type="time" id="schema-fran" class="schema-time" value="08:00"/>
+        <span class="til-sep">Till</span>
+        <input type="time" id="schema-till" class="schema-time" value="15:00"/>
+    </div>
+
+    <!--Lägg till-knapp
+    id="add-schema-btn"-->
+    <button id="add-schema-btn" class="btn-schema">
+        + Lägg till schema
+    </button>
+
+    <!--schema-form-->
+
+    <!--Evenemang-lista--->
+    <ul class="schema-lista" id="schema-lista">
+    </ul>
+
+    <!--Röda dagar-->
+    <button class="btn-helgdag" id="add-helgdag-btn">
+        <span>🗓</span>
+        Lägg till helgdag
+        <span class="btn-plus">+</span>
+    </button>
+
+    <!--Evenemang knapp-->
+    <button class="btn-evenemang" id="add-evenemang-btn">
+        <span>📌</span>
+        Lägg till evenemang
+        <span class="btn-plus">+</span>
+    </button>
+    </aside>
+    
+
+
     <main>
         
         <div class="row">
