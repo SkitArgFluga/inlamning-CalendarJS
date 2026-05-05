@@ -65,3 +65,70 @@ main{
     padding: 1.5rem;
     align-items: flex-start;
 }
+
+
+.page{
+  width:95%; 
+  max-width:75vw; 
+  margin:0 auto; 
+  box-sizing:border-box;
+}
+
+.material-symbols-outlined{ font-size:16px; vertical-align:middle; }
+
+/* KOPIERADE FRÅN ANNAT PROJEKT // SOFIA */
+.row {
+  margin: 8px -16px;
+}
+
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+.column {
+  display: flex;
+  float: left;
+  width: 20%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content {
+  border-radius: 5px;
+  background-color: rgb(54, 54, 54);
+  overflow: hidden;
+}
+
+.content .title{
+  color: white;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .description{
+  color: yellow;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .genre{
+  color:darkgray;
+  font-size: small;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.content .price-tag{
+  color: #d6d6d6;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
