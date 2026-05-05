@@ -21,16 +21,6 @@
     padding: 0;
 }
 
-boday{
-    background-color: var(--surface);
-    color:  var(--text);
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
 header{
     background-color: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -46,13 +36,12 @@ header{
     z-index: 100;
     box-shadow: var(--shadow);
 }
+
 .header-brand{
     display: flex;
     align-items: center;
     gap: 0.6rem;
 }
-
-.logo-icon{font-size: 1.6rem;}
 
 header h1{
     font-size: 1.4rem;
@@ -61,50 +50,10 @@ header h1{
     letter-spacing: 1px;
 }
 
-#today-info{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-#current-time{
-    font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
-    color: var(--accent);
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-#current-day{
-    color:var(--text-muted);
-    font-size: 0.95rem;
-    text-transform: capitalize;
-}
-
-#current-date{
-    color: var(--text);
-    font-size: 0.95rem;
-    font-weight: 500;
-}
-
 main{
     display: flex;
     flex: 1;
     gap: 1.5rem;
     padding: 1.5rem;
     align-items: flex-start;
-}
-
-.todo-section{
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    flex:0 0 360px;
-    min-width: 0;
-    box-shadow: var(--shadow);
-}
-.todo-section h2{
-    font-size: 1rem;
 }
