@@ -36,7 +36,7 @@ function addSchema() {
   document.getElementById("schema-text").value = "";
 }
 
-// Visa lista (filtrerar per vald dag 🔥)
+// Visa lista (filtrerar per vald dag)
 function renderScheman() {
   const lista = document.getElementById("schema-lista");
   const valdDag = document.getElementById("schema-dag").value;
