@@ -76,62 +76,7 @@ main{
 
 .material-symbols-outlined{ font-size:16px; vertical-align:middle; }
 
-/* KOPIERADE FRÅN ANNAT PROJEKT // SOFIA */
-.row {
-  margin: 8px -16px;
-}
 
-.row,
-.row > .column {
-  padding: 8px;
-}
-
-.column {
-  display: flex;
-  float: left;
-  width: 20%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.content {
-  border-radius: 5px;
-  background-color: rgb(54, 54, 54);
-  overflow: hidden;
-}
-
-.content .title{
-  color: white;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.content .description{
-  color: yellow;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.content .genre{
-  color:darkgray;
-  font-size: small;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.content .price-tag{
-  color: #d6d6d6;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
 
 /*==========================================================================================
                             Schema panel
@@ -139,7 +84,7 @@ main{
 
 .schema-panel{
   background-color: #c8d8e8;
-  border-right: 2px soöid #a0b8cc;
+  border-right: 2px solid #a0b8cc;
   padding: 12px;
   width: 280px;
   min-height: 100vh;

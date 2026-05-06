@@ -18,246 +18,62 @@
 <!--==========================================================================================
                      SCHEMA-PANEL 
 ===============================================================================================-->
-<aside class="schema-panel">
-
-  <!-- Rubrik -->
-  <div class="schema-header">
-    <span class="schema-icon">📋</span>
-    <h2 class="schema-title">Schema för arbete/skola</h2>
-  </div>
-
-  <!-- Form -->
-  <div class="schema-form">
-
-    <!-- Välj dag -->
-    <select id="schema-dag" class="schema-select">
-      <option value="">Välj dag...</option>
-      <option value="måndag">Måndag</option>
-      <option value="tisdag">Tisdag</option>
-      <option value="onsdag">Onsdag</option>
-      <option value="torsdag">Torsdag</option>
-      <option value="fredag">Fredag</option>
-      <option value="lördag">Lördag</option>
-      <option value="söndag">Söndag</option>
-    </select>
-
-    <!-- Text -->
-    <input
-      type="text"
-      id="schema-text"
-      class="schema-input"
-      placeholder="Vad händer? (t.ex. Jobbar)"
-      maxlength="50"
-    />
-
-    <!-- Tid -->
-    <div class="schema-tid">
-      <input type="time" id="schema-fran" class="schema-time" value="08:00">
-      <span class="tid-sep">till</span>
-      <input type="time" id="schema-till" class="schema-time" value="15:00">
-    </div>
-
-    <!-- Knapp -->
-    <button id="add-schema-btn" class="btn-schema">
-      + Lägg till schema
-    </button>
-
-  </div>
-
-  <!-- Lista -->
-  <ul class="schema-lista" id="schema-lista"></ul>
-
-</aside>
-    
 
 
-    <main>
+
+<main>
+        <aside class="schema-panel">
         
-        <div class="row">
-            <h2>Recommended?</h2>
-            <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
+          <!-- Rubrik -->
+          <div class="schema-header">
+            <span class="schema-icon">📋</span>
+            <h2 class="schema-title">Lägg till</h2>
+          </div>
+        
+          <!-- Form -->
+          <div class="schema-form">
+        
+            <!-- Välj dag -->
+            <select id="schema-dag" class="schema-select">
+              <option value="">Välj dag...</option>
+              <option value="måndag">Måndag</option>
+              <option value="tisdag">Tisdag</option>
+              <option value="onsdag">Onsdag</option>
+              <option value="torsdag">Torsdag</option>
+              <option value="fredag">Fredag</option>
+              <option value="lördag">Lördag</option>
+              <option value="söndag">Söndag</option>
+            </select>
+        
+            <!-- Text -->
+            <input
+              type="text"
+              id="schema-text"
+              class="schema-input"
+              placeholder="Vad händer? (t.ex. Jobbar)"
+              maxlength="50"
+            />
+        
+            <!-- Tid -->
+            <div class="schema-tid">
+              <input type="time" id="schema-fran" class="schema-time" value="08:00">
+              <span class="tid-sep">till</span>
+              <input type="time" id="schema-till" class="schema-time" value="15:00">
             </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-            <div class="row">
-            <h2>Featured!</h2>
-            <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-                <div class="column">
-                <div class="content">
-                    <img src="https://i.ytimg.com/vi/JxS5E-kZc2s/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCiwg7tOrK6eBE6M9JFDlfClF4Xwg" alt="Bild" style="width: 100%;">
-                    <div class="title">Funny cat image</div>
-                    <div class="description">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</div>
-                    <div class="genre">Kool Katt Genre</div>
-                    <div class="price-tag">From SEK669.00</div>
-                </div>
-            </div>
-        <div class="row">
+        
+            <!-- Knapp -->
+            <button id="add-schema-btn" class="btn-schema">
+              + Lägg till schema
+            </button>
+        
+          </div>
+        
+          <!-- Lista -->
+          <ul class="schema-lista" id="schema-lista"></ul>
+        
+        </aside>
+
+        <!-- INSERT CALENDAR HERE -->
 
     </main>
     <script src="schema.js"></script>
