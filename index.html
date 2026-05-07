@@ -26,35 +26,39 @@
     <h2 class="schema-title">Schema för arbete/skola</h2>
   </div>
 
-  <!-- Form -->
+  <!--Vald dag- visar när man klickar i kalendern-->
+  <!--Börjar dold, JavaScript visar den-->
+  <div class="schema-vald-dag" id="schema-vald-dag" style="display: none;">
+  <span class="schema-dag-icon">📆</span>
+  <span id="schema-dag-text">Ingen dag vald</span>
+  </div>
+
+  <!--Händelse för vald dag-->
+  <ul class="schema-lista" id="schema-lista">
+  <li class="schema-tomt">Klicka på en dag i kalendern</li>
+  </ul>
+ <!-- Formulär – alltid synligt -->
   <div class="schema-form">
+<div id="schema-dag-display" class="schema-dag-display hidden"></div>"</div>
 
-    <!-- Välj dag -->
-    <select id="schema-dag" class="schema-select">
-      <option value="">Välj dag...</option>
-      <option value="måndag">Måndag</option>
-      <option value="tisdag">Tisdag</option>
-      <option value="onsdag">Onsdag</option>
-      <option value="torsdag">Torsdag</option>
-      <option value="fredag">Fredag</option>
-      <option value="lördag">Lördag</option>
-      <option value="söndag">Söndag</option>
-    </select>
+    <!-- Dolt fält – sparar vald dag från KALENDERN -->
+    <!-- Överskriver dropdown om man klickat i kalendern -->
+    <input type="hidden" id="schema-dag" value="" />
 
-    <!-- Text -->
+    <!-- Textfält -->
     <input
       type="text"
       id="schema-text"
-      class="schema-input"
+      class="schema-input hidden"
       placeholder="Vad händer? (t.ex. Jobbar)"
       maxlength="50"
     />
 
     <!-- Tid -->
     <div class="schema-tid">
-      <input type="time" id="schema-fran" class="schema-time" value="08:00">
+      <input type="time" id="schema-fran" class="schema-time" value="08:00" />
       <span class="tid-sep">till</span>
-      <input type="time" id="schema-till" class="schema-time" value="15:00">
+      <input type="time" id="schema-till" class="schema-time" value="15:00" />
     </div>
 
     <!-- Knapp -->
@@ -63,17 +67,12 @@
     </button>
 
   </div>
-
-  <!-- Lista -->
-  <ul class="schema-lista" id="schema-lista"></ul>
-
   <!-- Helgdag -->
   <button class="btn-helgdag">
     <span>🗓</span>
     Lägg till helgdag
     <span class="btn-plus">+</span>
   </button>
-
   <!-- Evenemang -->
   <button class="btn-evenemang">
     <span>📌</span>
