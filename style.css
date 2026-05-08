@@ -51,6 +51,52 @@ header{
   justify-content: center;
 }
 
+.calendar-wrapper{
+  display:flex;
+  max-width: 280px;
+  font: 100% system-ui;
+}
+.calendar{
+  display: grid;
+  align-self: flex-end;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.first-day{
+  grid-column-start: 3;
+}
+
+.day-name{
+  width: 5rem;
+  background: var(--accent);
+}
+
+ol{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  grid-gap: 1rem;
+}
+
+li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.content{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #c8d8e8;
+  border-right: 2px solid #a0b8cc;
+}
+
+.contentImage{
+  max-width: 100%;
+  max-height: 100%;
+} 
+
 header h1{
     font-size: 1.4rem;
     font-weight: 700;
