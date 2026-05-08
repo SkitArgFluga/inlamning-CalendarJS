@@ -19,29 +19,43 @@ function saveScheman(scheman) {
 let valdDag = "";
 
 function visaSchemaForDag(dag) {
-  valdDag = dag;
 
+  valdDag = dag;
+  uppdateraBorders();
   const dagDisplay = document.getElementById("schema-dag-text");
   const dagPanel = document.getElementById("schema-vald-dag");
   const lista = document.getElementById("schema-lista");
 
   dagPanel.style.display = "flex";
-  dagDisplay.textContent =
-    dag.charAt(0).toUpperCase() + dag.slice(1);
+
+  dagDisplay.textContent = `Dag ${dag}`;
 
   const scheman = loadScheman();
-  const filtrerade = scheman.filter(s => s.dag === dag);
 
-  if (filtrerade.length === 0) {
-    lista.innerHTML = `<li>Inget schema för ${dag}</li>`;
+  const dagensSchema = scheman.filter(s => s.dag === dag);
+
+  if (dagensSchema.length === 0) {
+
+    lista.innerHTML = `
+      <li class="schema-tomt">
+        Inget schema för dag ${dag}
+      </li>
+    `;
+
     return;
   }
 
-  lista.innerHTML = filtrerade.map((s, i) => `
+  lista.innerHTML = dagensSchema.map((s, i) => `
     <li class="schema-item">
-      <div>${s.text}</div>
-      <div>${s.fran} - ${s.till}</div>
-      <button onclick="deleteSchema(${i}, '${dag}')">X</button>
+
+      <div class="schema-item-text">
+        ${s.text}
+      </div>
+
+      <button onclick="deleteSchema(${i}, '${dag}')">
+        X
+      </button>
+
     </li>
   `).join("");
 }
@@ -51,9 +65,10 @@ function visaSchemaForDag(dag) {
 // ==============================
 function addSchema() {
 
-  const text = document.getElementById("schema-text").value.trim();
-  const fran = document.getElementById("schema-fran").value;
-  const till = document.getElementById("schema-till").value;
+  const text = document
+    .getElementById("schema-text")
+    .value
+    .trim();
 
   if (!valdDag) {
     alert("Välj en dag först!");
@@ -61,7 +76,7 @@ function addSchema() {
   }
 
   if (!text) {
-    alert("Skriv vad som händer!");
+    alert("Skriv något!");
     return;
   }
 
@@ -69,14 +84,14 @@ function addSchema() {
 
   scheman.push({
     dag: valdDag,
-    text,
-    fran,
-    till
+    text: text
   });
 
   saveScheman(scheman);
 
   visaSchemaForDag(valdDag);
+
+  uppdateraBorders();
 
   document.getElementById("schema-text").value = "";
 }
@@ -85,20 +100,65 @@ function addSchema() {
 // DELETE
 // ==============================
 function deleteSchema(index, dag) {
+
   const scheman = loadScheman();
 
-  const filtrerade = scheman.filter(s => s.dag === dag);
-  const bort = filtrerade[index];
+  const dagensSchema = scheman.filter(s => s.dag === dag);
 
-  const nya = scheman.filter(s =>
-    !(s.dag === bort.dag &&
-      s.text === bort.text &&
-      s.fran === bort.fran &&
-      s.till === bort.till)
+  const schemaAttTaBort = dagensSchema[index];
+
+  const nyaScheman = scheman.filter(s =>
+    !(s.dag === schemaAttTaBort.dag &&
+      s.text === schemaAttTaBort.text)
   );
 
-  saveScheman(nya);
+  saveScheman(nyaScheman);
+
   visaSchemaForDag(dag);
+
+  uppdateraBorders();
+}
+
+// ==============================
+// LÄGG TILL DAG
+// ==============================
+
+// ==============================
+// VÄLJ DAG (via kalendern)
+// ==============================
+function valDag(el) {
+  valdDag = el.dataset.dag;
+
+  // Remove active class from all days
+  document.querySelectorAll(".calendar .content").forEach(li => {
+    li.classList.remove("day-active");
+  });
+
+  // Mark clicked day as active
+  el.classList.add("day-active");
+
+  // Show the panel for this day
+  visaSchemaForDag(valdDag);
+
+  // Reveal the text input (it starts hidden)
+  document.getElementById("schema-text").classList.remove("hidden");
+}
+
+// Refresh green borders for all days that have schedule entries
+function uppdateraBorders() {
+  const scheman = loadScheman();
+  document.querySelectorAll(".calendar .content").forEach(li => {
+    const dag = li.dataset.dag;
+    const harSchema = scheman.filter(s => s.dag === dag);
+    // Don't overwrite the active (blue) selection
+    if (!li.classList.contains("day-active")) {
+      li.classList.toggle("day-has-schema", harSchema);
+    }
+
+    if(harSchema.length > 0) {
+    li.querySelector(".taskAmount").textContent = harSchema.length;
+    }
+  });
 }
 
 // ==============================
@@ -110,4 +170,8 @@ function initSchema() {
     .getElementById("add-schema-btn")
     .addEventListener("click", addSchema);
 
+  uppdateraBorders();
+  createCalendar();
 }
+
+document.addEventListener("DOMContentLoaded", initSchema);

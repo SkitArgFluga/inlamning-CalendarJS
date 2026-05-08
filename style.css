@@ -90,6 +90,7 @@ li{
   padding-bottom: 1rem;
   background-color: #c8d8e8;
   border-right: 2px solid #a0b8cc;
+  align-items: center;
 }
 
 .contentImage{
@@ -122,6 +123,20 @@ main{
 
 .material-symbols-outlined{ font-size:16px; vertical-align:middle; }
 
+
+/* Currently selected day */
+.day-active {
+  outline: 3px solid #5a7a9a;
+  outline-offset: -3px;
+  background-color: #ddeeff;
+}
+
+/* Day that has schedule entries but isn't currently selected */
+.day-has-schema {
+  outline: 3px solid #4caf88;
+  outline-offset: -3px;
+  background-color: #e8f5ee;
+}
 
 
 /*==========================================================================================
@@ -178,7 +193,7 @@ main{
 .schema-input:focus{
   border-color: #5a7a9a;
 }
-:-moz-any/*Tid från-till*/
+
 .schema-tid{
   display: block;
   align-items: center;

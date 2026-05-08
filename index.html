@@ -1,72 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalender Todo App</title>
-
+    
     <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+    <script src="./js/calendar.js"></script> 
+  </head>
+  
+  <body>
     <header>
-        <div class="container">
-            <h1 class="item">TodoKal</h1>
+      <div class="container">
+        <h1 class="item">TodoKal</h1>
         </div>
-    </header>
-
+      </header>
+      
 <!--==========================================================================================
                      SCHEMA-PANEL 
-===============================================================================================-->
-
-<main>
-  <aside class="schema-panel">
+                     ===============================================================================================-->
+                     
+  <main>
+    <aside class="schema-panel">
+      <section class="welcome">
+        <h2 id="current-time"></h2>
+        <p id="current-date"></p>
+      </section>
     <!-- Rubrik -->
     <div class="schema-header">
       <span class="schema-icon">📋</span>
-      <h2 class="schema-title">Schema för arbete/skola</h2>
+      <h2 class="schema-title">Schema</h2>
     </div>
-  
+    
     <!--Vald dag- visar när man klickar i kalendern-->
     <!--Börjar dold, JavaScript visar den-->
     <div class="schema-vald-dag" id="schema-vald-dag" style="display: none;">
-    <span class="schema-dag-icon">📆</span>
-    <span id="schema-dag-text">Ingen dag vald</span>
+      <span class="schema-dag-icon">📆</span>
+      <span id="schema-dag-text">Ingen dag vald</span>
     </div>
-  
+    
     <!--Händelse för vald dag-->
     <ul class="schema-lista" id="schema-lista">
-    <li class="schema-tomt">Klicka på en dag i kalendern</li>
+      <li class="schema-tomt">Klicka på en dag i kalendern</li>
     </ul>
    <!-- Formulär – alltid synligt -->
     <div class="schema-form">
-  <div id="schema-dag-display" class="schema-dag-display hidden"></div>"</div>
-  
+      <div id="schema-dag-display" class="schema-dag-display hidden"></div></div>
+      
       <!-- Dolt fält – sparar vald dag från KALENDERN -->
       <!-- Överskriver dropdown om man klickat i kalendern -->
       <input type="hidden" id="schema-dag" value="" />
-  
+      
       <!-- Textfält -->
       <input
-        type="text"
-        id="schema-text"
-        class="schema-input hidden"
-        placeholder="Vad händer? (t.ex. Jobbar)"
-        maxlength="50"
+      type="text"
+      id="schema-text"
+      class="schema-input"
+      placeholder="Vad händer? (t.ex. Jobbar)"
+      maxlength="50"
       />
-  
-      <!-- Tid -->
-      <div class="schema-tid">
-        <input type="time" id="schema-fran" class="schema-time" value="08:00" />
-        <span class="tid-sep">till</span>
-        <input type="time" id="schema-till" class="schema-time" value="15:00" />
-      </div>
-  
+      
       <!-- Knapp -->
       <button id="add-schema-btn" class="btn-schema">
         + Lägg till schema
       </button>
-  
+      
     </div>
     <!-- Helgdag -->
     <button class="btn-helgdag">
@@ -79,111 +77,82 @@
       <span>📌</span>
       Lägg till evenemang
       <span class="btn-plus">+</span>
-    </button>  
-  </aside>
+      </button>  
+
+
+    </aside>
   
   <div class="calendar-wrapper">
-      <ol class="calendar">
-        <li class="day-name">Mon</li>
-        <li class="day-name">Tue</li>
-        <li class="day-name">Wed</li>
-        <li class="day-name">Thu</li>
-        <li class="day-name">Fri</li>
+    <ol class="calendar" id="calendar">
+      <li class="day-name">Mon</li>
+      <li class="day-name">Tue</li>
+      <li class="day-name">Wed</li>
+      <li class="day-name">Thu</li>
+      <li class="day-name">Fri</li>
         <li class="day-name">Sat</li>
         <li class="day-name">Sun</li>
-        
-        <!-- week - 1 -->
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        
-        <!-- week - 2 -->
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-    
-        <!-- week - 3 -->
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-    
-        <!-- week - 4 -->
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-        <li class="content"> 
-          <img class="contentImage" src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg" alt="Rolig katt bild">
-        </li>
-    
     </ol>
   </div>
+
+
+<script>
+  function createCalendar() {
+    const calendar = document.getElementById("calendar");
+
+    // Get current year and month
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+
+    // Number of days in current month
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Create one <li> for each day
+    for (let day = 1; day <= daysInMonth; day++) {
+
+        const li = document.createElement("li");
+        li.className = "content";
+        li.dataset.dag = day;
+
+        li.onclick = function () {
+            valDag(this);
+        };
+
+        li.innerHTML = `
+            <span class="taskAmount"></span>
+            <img 
+                class="contentImage"
+                src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg"
+                alt="Rolig katt bild"
+            >
+            <span>Dag ${day}</span>
+        `;
+
+        calendar.appendChild(li);
+      }
+
+        function updateClock() {
+
+      const now = new Date();
+
+      const time = now.toLocaleTimeString("sv-SE", {
+        hour: "2-digit",
+        minute: "2-digit"
+      });
+
+      const date = now.toLocaleDateString("sv-SE", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+
+      document.getElementById("current-time").textContent = time;
+      document.getElementById("current-date").textContent = date;
+      }
+
+      setInterval(updateClock, 1000);
+      updateClock();
+    }
+</script>
 </main>
