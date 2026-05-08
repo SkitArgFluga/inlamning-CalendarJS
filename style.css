@@ -25,7 +25,7 @@ header{
     background-color: var(--surface);
     border-bottom: 1px solid var(--border);
     padding: 1rem 1.5rem;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -141,7 +141,7 @@ main{
 }
 
 /*Rubrik*/
-schema-header{
+.schema-header{
   display: flex;
   align-items: center;
   gap: 8px;
@@ -166,7 +166,7 @@ schema-header{
 .schema-select, 
 .schema-input,
 .schema-time{
-  width: 100;
+  width: 100%;
   padding: 6px 10px;
   border: 1px solid #a0b8cc;
   border-radius: 6px;
@@ -239,18 +239,33 @@ schema-header{
   font-size: 0.75rem;
   margin-top: 2px;
 }
+/* Dold */
+.hidden{
+  display:none;
+}
+
+/* Dag-display */
+.schema-dag-display{
+  width:100%;
+  background:white;
+  border:1px solid #a0b8cc;
+  border-radius:6px;
+  padding:10px;
+  text-align:center;
+  font-weight:700;
+  color:#3a5a7a;
+}
 /*Helgdag och evenemang-knappar*/
 .btn-helgdag,
 .btn-evenemang{
-  display: block;
+  display: none;
   align-items: center;
   gap: 8px;
   padding: 10px 12px;
   border: none;
   border-radius: 6px;
   font-size: 0.85rem;
-  font-weight: 600
-  ;
+  font-weight: 600;
   cursor: alias;
   width: 100%;
   transform: background 0.2s;
@@ -274,3 +289,4 @@ schema-header{
   font-size: 1.2rem;
   font-weight: 300;
 }
+

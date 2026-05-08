@@ -1,72 +1,113 @@
-// Hämta från localStorage
+/*
+Schema system (ENKEL FUNGERANDE VERSION)
+*/
+
+// ==============================
+// LOCAL STORAGE
+// ==============================
 function loadScheman() {
-  const data = localStorage.getItem("scheman");
-  return data ? JSON.parse(data) : [];
+  return JSON.parse(localStorage.getItem("scheman")) || [];
 }
 
-// Spara
 function saveScheman(scheman) {
   localStorage.setItem("scheman", JSON.stringify(scheman));
 }
 
-// Lägg till
+// ==============================
+// VÄLJ DAG
+// ==============================
+let valdDag = "";
+
+function visaSchemaForDag(dag) {
+  valdDag = dag;
+
+  const dagDisplay = document.getElementById("schema-dag-text");
+  const dagPanel = document.getElementById("schema-vald-dag");
+  const lista = document.getElementById("schema-lista");
+
+  dagPanel.style.display = "flex";
+  dagDisplay.textContent =
+    dag.charAt(0).toUpperCase() + dag.slice(1);
+
+  const scheman = loadScheman();
+  const filtrerade = scheman.filter(s => s.dag === dag);
+
+  if (filtrerade.length === 0) {
+    lista.innerHTML = `<li>Inget schema för ${dag}</li>`;
+    return;
+  }
+
+  lista.innerHTML = filtrerade.map((s, i) => `
+    <li class="schema-item">
+      <div>${s.text}</div>
+      <div>${s.fran} - ${s.till}</div>
+      <button onclick="deleteSchema(${i}, '${dag}')">X</button>
+    </li>
+  `).join("");
+}
+
+// ==============================
+// ADD SCHEMA (KNAPPEN)
+// ==============================
 function addSchema() {
-  const dag = document.getElementById("schema-dag").value;
+
   const text = document.getElementById("schema-text").value.trim();
   const fran = document.getElementById("schema-fran").value;
   const till = document.getElementById("schema-till").value;
 
-  if (!dag || !text) {
-    alert("Fyll i dag och text!");
+  if (!valdDag) {
+    alert("Välj en dag först!");
+    return;
+  }
+
+  if (!text) {
+    alert("Skriv vad som händer!");
     return;
   }
 
   const scheman = loadScheman();
 
   scheman.push({
-    dag,
+    dag: valdDag,
     text,
     fran,
     till
   });
 
   saveScheman(scheman);
-  renderScheman();
+
+  visaSchemaForDag(valdDag);
 
   document.getElementById("schema-text").value = "";
 }
 
-// Visa lista (filtrerar per vald dag)
-function renderScheman() {
-  const lista = document.getElementById("schema-lista");
-  const valdDag = document.getElementById("schema-dag").value;
+// ==============================
+// DELETE
+// ==============================
+function deleteSchema(index, dag) {
   const scheman = loadScheman();
 
-  const filtrerade = valdDag
-    ? scheman.filter(s => s.dag === valdDag)
-    : scheman;
+  const filtrerade = scheman.filter(s => s.dag === dag);
+  const bort = filtrerade[index];
 
-  if (filtrerade.length === 0) {
-    lista.innerHTML = "<li>Inget schema</li>";
-    return;
-  }
+  const nya = scheman.filter(s =>
+    !(s.dag === bort.dag &&
+      s.text === bort.text &&
+      s.fran === bort.fran &&
+      s.till === bort.till)
+  );
 
-  lista.innerHTML = filtrerade.map(s => `
-    <li class="schema-item">
-      <div class="schema-item-dag">${s.dag}</div>
-      <div>${s.text}</div>
-      <div class="schema-item-tid">${s.fran} - ${s.till}</div>
-    </li>
-  `).join("");
+  saveScheman(nya);
+  visaSchemaForDag(dag);
 }
 
-// Start
+// ==============================
+// INIT
+// ==============================
 function initSchema() {
-  document.getElementById("add-schema-btn")
+
+  document
+    .getElementById("add-schema-btn")
     .addEventListener("click", addSchema);
 
-  document.getElementById("schema-dag")
-    .addEventListener("change", renderScheman);
-
-  renderScheman();
 }

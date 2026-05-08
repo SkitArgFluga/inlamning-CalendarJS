@@ -19,6 +19,73 @@
                      SCHEMA-PANEL 
 ===============================================================================================-->
 
+<aside class="schema-panel">
+
+  <!-- Rubrik -->
+  <div class="schema-header">
+    <span class="schema-icon">📋</span>
+    <h2 class="schema-title">Schema för arbete/skola</h2>
+  </div>
+
+  <!--Vald dag- visar när man klickar i kalendern-->
+  <!--Börjar dold, JavaScript visar den-->
+  <div class="schema-vald-dag" id="schema-vald-dag" style="display: none;">
+  <span class="schema-dag-icon">📆</span>
+  <span id="schema-dag-text">Ingen dag vald</span>
+  </div>
+
+  <!--Händelse för vald dag-->
+  <ul class="schema-lista" id="schema-lista">
+  <li class="schema-tomt">Klicka på en dag i kalendern</li>
+  </ul>
+ <!-- Formulär – alltid synligt -->
+  <div class="schema-form">
+<div id="schema-dag-display" class="schema-dag-display hidden"></div>"</div>
+
+    <!-- Dolt fält – sparar vald dag från KALENDERN -->
+    <!-- Överskriver dropdown om man klickat i kalendern -->
+    <input type="hidden" id="schema-dag" value="" />
+
+    <!-- Textfält -->
+    <input
+      type="text"
+      id="schema-text"
+      class="schema-input hidden"
+      placeholder="Vad händer? (t.ex. Jobbar)"
+      maxlength="50"
+    />
+
+    <!-- Tid -->
+    <div class="schema-tid">
+      <input type="time" id="schema-fran" class="schema-time" value="08:00" />
+      <span class="tid-sep">till</span>
+      <input type="time" id="schema-till" class="schema-time" value="15:00" />
+    </div>
+
+    <!-- Knapp -->
+    <button id="add-schema-btn" class="btn-schema">
+      + Lägg till schema
+    </button>
+
+  </div>
+  <!-- Helgdag -->
+  <button class="btn-helgdag">
+    <span>🗓</span>
+    Lägg till helgdag
+    <span class="btn-plus">+</span>
+  </button>
+  <!-- Evenemang -->
+  <button class="btn-evenemang">
+    <span>📌</span>
+    Lägg till evenemang
+    <span class="btn-plus">+</span>
+  </button>
+
+</aside>
+    
+=======
+>>>>>>> da5316b29bbb9ffefd9ec60c41830ee1e4b02673
+
 
 
 <main>
