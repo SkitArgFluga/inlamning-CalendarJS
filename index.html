@@ -6,28 +6,18 @@
     <title>Kalender Todo App</title>
     
     <link rel="stylesheet" href="style.css">
-    <script src="./js/calendar.js"></script> 
   </head>
   
-<!-- TODO -->
-<!--
-2. Det skall gå att använda verktyget på alla skärmstorlekar ner till 375px i bredd. (G)
-6. Skapa och designa kalendervyn med en månadsvy över aktuell månad. (G)
-7. Kalendern ska visa hur många todos som är schemladaga för varje dag. (G)
-8. Användaren skall kunna växla till andra månader i kalendervyn. (G)
-9. Svenska helgdagar ska visas i kalendern. (G)
- -->
-
   <body>
     <header>
       <div class="container">
         <h1 class="item">TodoKal</h1>
-        </div>
-      </header>
+      </div>
+    </header>
       
 <!--==========================================================================================
                      SCHEMA-PANEL 
-                     ===============================================================================================-->
+============================================================================================-->
                      
   <main>
     <aside class="schema-panel">
@@ -35,6 +25,7 @@
         <h2 id="current-time"></h2>
         <p id="current-date"></p>
       </section>
+
     <!-- Rubrik -->
     <div class="schema-header">
       <span class="schema-icon">📋</span>
@@ -52,21 +43,21 @@
     <ul class="schema-lista" id="schema-lista">
       <li class="schema-tomt">Klicka på en dag i kalendern</li>
     </ul>
-   <!-- Formulär – alltid synligt -->
+
+    <!-- Formulär – alltid synligt -->
     <div class="schema-form">
-      <div id="schema-dag-display" class="schema-dag-display hidden"></div></div>
+      <div id="schema-dag-display" class="schema-dag-display hidden"></div>
       
       <!-- Dolt fält – sparar vald dag från KALENDERN -->
-      <!-- Överskriver dropdown om man klickat i kalendern -->
       <input type="hidden" id="schema-dag" value="" />
       
       <!-- Textfält -->
       <input
-      type="text"
-      id="schema-text"
-      class="schema-input"
-      placeholder="Vad händer? (t.ex. Jobbar)"
-      maxlength="50"
+        type="text"
+        id="schema-text"
+        class="schema-input"
+        placeholder="Vad händer? (t.ex. Jobbar)"
+        maxlength="50"
       />
       
       <!-- Knapp -->
@@ -75,6 +66,7 @@
       </button>
       
     </div>
+
     <!-- Helgdag -->
     <button class="btn-helgdag">
       <span>🗓</span>
@@ -86,11 +78,18 @@
       <span>📌</span>
       Lägg till evenemang
       <span class="btn-plus">+</span>
-      </button>  
-
+    </button>
 
     </aside>
-  
+
+  <div class="kalender-sektion">
+
+  <div class="calendar-controls">
+    <button id="prevMonth">←</button>
+    <h2 id="monthLabel"></h2>
+    <button id="nextMonth">→</button>
+  </div>
+
   <div class="calendar-wrapper">
     <ol class="calendar" id="calendar">
       <li class="day-name">Mon</li>
@@ -98,70 +97,15 @@
       <li class="day-name">Wed</li>
       <li class="day-name">Thu</li>
       <li class="day-name">Fri</li>
-        <li class="day-name">Sat</li>
-        <li class="day-name">Sun</li>
+      <li class="day-name">Sat</li>
+      <li class="day-name">Sun</li>
     </ol>
   </div>
 
+</div>
 
-<script>
-  function createCalendar() {
-    const calendar = document.getElementById("calendar");
+  </main>
 
-    // Get current year and month
-    const today = new Date();
-    const year = today.getFullYear();
-    const month = today.getMonth();
-
-    // Number of days in current month
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    // Create one <li> for each day
-    for (let day = 1; day <= daysInMonth; day++) {
-
-        const li = document.createElement("li");
-        li.className = "content";
-        li.dataset.dag = day;
-
-        li.onclick = function () {
-            valDag(this);
-        };
-
-        li.innerHTML = `
-            <span class="taskAmount"></span>
-            <img 
-                class="contentImage"
-                src="https://i.pinimg.com/1200x/e2/ba/22/e2ba2245dc18952031904974cef4c68a.jpg"
-                alt="Rolig katt bild"
-            >
-            <span>Dag ${day}</span>
-        `;
-
-        calendar.appendChild(li);
-      }
-
-        function updateClock() {
-
-      const now = new Date();
-
-      const time = now.toLocaleTimeString("sv-SE", {
-        hour: "2-digit",
-        minute: "2-digit"
-      });
-
-      const date = now.toLocaleDateString("sv-SE", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-      });
-
-      document.getElementById("current-time").textContent = time;
-      document.getElementById("current-date").textContent = date;
-      }
-
-      setInterval(updateClock, 1000);
-      updateClock();
-    }
-</script>
-</main>
+  <script src="/js/calendar.js"></script>
+</body>
+</html>
